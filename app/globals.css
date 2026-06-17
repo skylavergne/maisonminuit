@@ -1,0 +1,757 @@
+/* 🔤 Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400&display=swap');
+
+
+/* ⚠️ Tailwind SIEMPRE arriba después del import */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+main {
+  overflow-x: hidden;
+}
+
+/* 🎯 Variables base */
+:root {
+  --background: #ffffff;
+  --foreground: #0a0a0a;
+  --muted: #6b6b6b;
+  --line: #eaeaea;
+}
+
+/* 🔧 Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+/* 🧠 Base body */
+body {
+  background: black;
+  color: white;
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 🖤 Logo serif estilo editorial */
+.logo {
+  font-family: Georgia, "Times New Roman", serif;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+/* 🧠 Tipografía */
+h1, h2, h3 {
+  font-weight: 400;
+  letter-spacing: -0.02em;
+}
+
+p {
+  color: var(--muted);
+}
+
+/* 📐 Layout */
+section {
+  padding: 120px 24px;
+  
+}
+
+
+
+/* 📦 Container opcional */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* 🔘 BOTÓN MAISON MINUIT (IMPORTANTE) */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 12px 20px;
+  border: 1px solid #929292;
+  background: transparent;
+  color: #929292;
+
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.btn:hover {
+  background: #0a0a0a;
+  color: #aaaaaa;
+}
+
+.textp{
+  padding-bottom: 20px;
+    color: #c1c1c1;
+  font-family: 'IBM Plex Mono', monospace;
+
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 24px 32px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background: transparent;
+  z-index: 1000;
+}
+
+/* 🖤 LOGO BLANCO */
+.navbar .logo {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 12px;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+
+  color: #ffffff;
+}
+
+/* 🔗 LINKS GRIS CLARO */
+.navbar nav a {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.6);
+  text-decoration: none;
+  letter-spacing: 0.05em;
+  transition: all 0.2s ease;
+
+}
+
+.navbar nav {
+  display: flex;
+  gap: 48px; /* 👈 más espacio entre links */
+}
+
+/* ✨ HOVER BLANCO */
+.navbar nav a:hover {
+  color: #ffffff;
+}
+
+/* 🎬 HERO VIDEO */
+.hero {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* VIDEO */
+.hero-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  z-index: 1;
+}
+
+/* 🌑 OSCURECIDO PARA LEGIBILIDAD */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 2;
+}
+
+/* 🧠 CONTENIDO ENCIMA */
+.hero-content {
+  position: relative;
+  z-index: 3;
+
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  color: white;
+  padding: 0 24px;
+}
+
+/* ABOUT */
+
+.about-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  gap: 80px;
+
+  max-width: 1400px;
+  margin: 0 auto;
+
+  padding: 180px 60px;
+}
+
+.about-title h2 {
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: clamp(3rem, 7vw, 7rem);
+
+  font-weight: 400;
+
+  letter-spacing: 0.08em;
+
+  text-transform: uppercase;
+
+  line-height: 0.95;
+}
+
+.about-content {
+  max-width: 520px;
+}
+
+.about-content p {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.95rem;
+  line-height: 2;
+  color: #b8b8b8;
+  letter-spacing: 0.01em;
+}
+
+
+/* ========================================
+   RESPONSIVE
+======================================== */
+
+/* Tablets */
+@media (max-width: 1024px) {
+
+  .navbar {
+    padding: 20px 24px;
+  }
+
+  .navbar nav {
+    gap: 32px;
+  }
+
+  .hero-content h1 {
+    font-size: clamp(4rem, 12vw, 6rem);
+  }
+
+  .about-section {
+    gap: 60px;
+    padding: 140px 40px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+
+  section {
+    padding: 100px 24px;
+  }
+
+  /* NAVBAR */
+
+  .navbar {
+    padding: 18px 20px;
+  }
+
+  .navbar .logo {
+    font-size: 11px;
+    letter-spacing: 0.25em;
+  }
+
+  .navbar nav {
+    gap: 20px;
+  }
+
+  .navbar nav a {
+    font-size: 12px;
+  }
+
+  /* HERO */
+
+  .hero-content {
+    padding: 0 24px;
+  }
+
+  .hero-content h1 {
+    font-size: clamp(3rem, 16vw, 5rem);
+    line-height: 0.95;
+  }
+
+  .hero-content p {
+    max-width: 320px;
+  }
+
+  /* BUTTONS */
+
+  .btn {
+    width: 100%;
+  }
+
+  /* ABOUT */
+
+  .about-section {
+    grid-template-columns: 1fr;
+    gap: 40px;
+
+    padding: 120px 24px;
+  }
+
+  .about-title h2 {
+    font-size: clamp(3rem, 18vw, 5rem);
+  }
+
+  .about-content {
+    max-width: 100%;
+  }
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+
+  .navbar {
+    padding: 16px;
+  }
+
+  .navbar nav {
+    gap: 16px;
+  }
+
+  .navbar nav a {
+    font-size: 11px;
+  }
+
+  .logo {
+    letter-spacing: 0.08em;
+  }
+
+  .hero-content h1 {
+    font-size: clamp(2.5rem, 18vw, 4rem);
+  }
+
+  .hero-content p {
+    font-size: 14px;
+  }
+
+  .about-title h2 {
+    font-size: 3rem;
+  }
+
+  .about-content p {
+    font-size: 15px;
+    line-height: 1.8;
+  }
+}
+
+
+/* SERVICES */
+
+.services-section {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 180px 60px;
+}
+
+.services-header {
+  margin-bottom: 80px;
+}
+
+.services-header span {
+  font-size: 12px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: #7a7a7a;
+}
+
+.services-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.service-item {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  gap: 60px;
+
+  padding: 36px 0;
+
+  border-top: 1px solid rgba(255,255,255,0.08);
+
+  transition: all .3s ease;
+}
+
+.service-item:last-child {
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.service-item:hover {
+  padding-left: 12px;
+}
+
+.service-item h3 {
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: 2rem;
+  font-weight: 400;
+
+  color: white;
+}
+
+.service-item p {
+  max-width: 420px;
+
+  color: #9a9a9a;
+
+  line-height: 1.8;
+}
+
+
+.service-item p {
+  font-family: 'IBM Plex Mono', monospace;
+
+  font-size: 0.9rem;
+
+  line-height: 1.9;
+
+  color: #8f8f8f;
+
+  letter-spacing: 0.01em;
+}
+
+
+/* =========================
+   SHOWCASE
+========================= */
+
+
+/* ==========================
+   SHOWCASE CAROUSEL
+========================== */
+
+.showcase-section {
+  padding: 180px 60px;
+}
+
+.showcase-header {
+  margin-bottom: 50px;
+}
+
+.showcase-header span {
+  font-size: 12px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: #8f8f8f;
+}
+
+.carousel {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel-slide {
+  width: 100%;
+}
+
+.carousel-slide img {
+  width: 100%;
+  height: auto;
+
+  display: block;
+
+  border-radius: 8px;
+}
+
+.showcase-info {
+  margin-top: 24px;
+}
+
+.showcase-info h3 {
+  font-family: Georgia, serif;
+
+  font-size: 2rem;
+
+  font-weight: 400;
+
+  color: white;
+}
+
+.showcase-info p {
+  margin-top: 8px;
+
+  font-family: 'IBM Plex Mono', monospace;
+
+  font-size: 0.9rem;
+
+  color: #8f8f8f;
+}
+
+/* FLECHAS */
+
+.carousel-arrow {
+  position: absolute;
+
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  background: none;
+
+  border: none;
+
+  color: rgba(255,255,255,0.6);
+
+  font-size: 2rem;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+
+  z-index: 20;
+}
+
+.carousel-arrow:hover {
+  color: white;
+}
+
+.carousel-arrow.left {
+  left: -50px;
+}
+
+.carousel-arrow.right {
+  right: -50px;
+}
+@media (max-width: 768px) {
+
+  .showcase-section {
+    padding: 120px 24px;
+  }
+
+  .carousel-slide {
+    height: 70vh;
+
+    overflow-y: auto;
+
+    border-radius: 8px;
+  }
+
+  .carousel-slide img {
+    width: 100%;
+    height: auto;
+
+    display: block;
+  }
+
+  .carousel-arrow.left {
+    left: 10px;
+  }
+
+  .carousel-arrow.right {
+    right: 10px;
+  }
+
+  .showcase-info h3 {
+    font-size: 1.5rem;
+  }
+}
+
+/* ==========================
+   APPROACH
+========================== */
+
+/* ==========================
+   APPROACH
+========================== */
+
+.approach-section {
+  padding: 180px 60px;
+}
+
+.approach-title {
+  margin-bottom: 80px;
+}
+
+.approach-title span {
+  font-size: 12px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: #8f8f8f;
+}
+
+.approach-list {
+  display: flex;
+  flex-direction: column;
+}
+
+
+.approach-item {
+  display: grid;
+  grid-template-columns: 280px 600px;
+
+  justify-content: center;
+
+  gap: 80px;
+
+  padding: 80px 0;
+
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+.approach-number {
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: clamp(4rem, 8vw, 8rem);
+
+  line-height: 0.9;
+
+  color: white;
+}
+
+.approach-content h3 {
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: 2rem;
+
+  font-weight: 400;
+
+  margin-bottom: 18px;
+
+  color: white;
+}
+
+.approach-content p {
+  font-family: 'IBM Plex Mono', monospace;
+
+  font-size: 0.95rem;
+
+  line-height: 1.9;
+
+  max-width: 500px;
+
+  color: #8f8f8f;
+}
+
+@media (max-width: 768px) {
+
+  .approach-section {
+    padding: 120px 24px;
+  }
+
+  .approach-item {
+    grid-template-columns: 1fr;
+
+    gap: 20px;
+  }
+
+  .approach-number {
+    font-size: 4rem;
+  }
+
+  .approach-content h3 {
+    font-size: 1.6rem;
+  }
+}
+
+.approach-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.approach-content p {
+  font-family: 'IBM Plex Mono', monospace;
+
+  font-size: 0.95rem;
+
+  line-height: 1.9;
+
+  max-width: 420px;
+
+  color: #8f8f8f;
+}
+
+
+/* ==========================
+   CONTACT
+========================== */
+
+.contact-section {
+  padding: 220px 24px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  text-align: center;
+}
+
+.contact-label {
+  font-size: 12px;
+
+  letter-spacing: 0.25em;
+
+  text-transform: uppercase;
+
+  color: #8f8f8f;
+
+  margin-bottom: 32px;
+}
+
+.contact-section h2 {
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: clamp(3rem, 8vw, 6rem);
+
+  font-weight: 400;
+
+  line-height: 1;
+
+  max-width: 900px;
+
+  margin-bottom: 40px;
+
+  color: white;
+}
+
+.contact-email {
+  font-family: 'IBM Plex Mono', monospace;
+
+  font-size: 1rem;
+
+  color: #b5b5b5;
+
+  text-decoration: none;
+
+  transition: 0.25s ease;
+}
+
+.contact-email:hover {
+  color: white;
+}
