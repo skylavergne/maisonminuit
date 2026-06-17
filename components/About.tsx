@@ -8,7 +8,7 @@ export default function About() {
 
       <div className="about-content">
         <p>
-          Maison Minuit is a visual design and communication studio founded by Sky Cielo Lavrgne. 
+          Maison Minuit is a visual design and communication studio founded by Sky Cielo Lavergne. 
           We work with other founders, startups and ambitious brands.
         </p>
 
